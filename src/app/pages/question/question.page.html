@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Question {{ questionNumber + 1}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="primary">
+  <ion-card class="question" color="medium">
+    <img src={{question.imgUrl}} alt="country" width="60%" height="50%"/><br/>
+    <ion-text>{{question.text}}</ion-text>
+  </ion-card>
+  <ion-card *ngFor="let choice of question.choices" class="choice" (click)="selectAnswer(choice)" class={{getClass(choice)}} color="secondary">
+    <ion-text>{{choice.body}}</ion-text>
+  </ion-card>
+  <ion-button *ngIf="answersDisplayed" (click)="nextQuestion()" color="warning" class="next-btn">Next <ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
+</ion-content>

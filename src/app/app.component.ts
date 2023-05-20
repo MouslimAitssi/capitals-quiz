@@ -1,18 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from './services/user.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   public appPages = [
-    { title: 'Inbox', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/spam', icon: 'warning' },
+    { title: 'End Quiz', url: '/end', icon: 'exit', routesToNotInclude:['/end'] },
+    { title: 'Back To Quiz', url: '/question', icon: 'help', routesToNotInclude: ['/question', '/end'] },
+    { title: 'Ranking', url: '/ranking', icon: 'trophy', routesToNotInclude:['/ranking'] }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  totalPoints: number=0;
+  username: string="Please Wait...";
+
+  constructor(private userService: UserService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.userService.user.subscribe(user=> {
+      this.totalPoints = user.totalPoints;
+      this.username = user.username;
+    })
+  }
+
+  routerNotIn(routes: string[]) {
+    return !routes.includes(this.router.url);
+  }
+
 }

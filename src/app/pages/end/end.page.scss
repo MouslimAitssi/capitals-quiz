@@ -1,0 +1,30 @@
+ion-text {
+    font-size: 30px;
+}
+
+.flags-footer {
+    position: fixed;
+    bottom: 2%;
+}
+
+.end-page {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+ion-button {
+    margin: 20% 0;
+    ion-text {
+        font-size: 20px;
+    }
+}
+
+.flags-header {
+    margin: 10% 0;
+}
+
+.reset-btn {
+    height: 8%; 
+    width: 85%; 
+}

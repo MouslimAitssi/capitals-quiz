@@ -1,0 +1,45 @@
+.mode {
+    height: 8%; 
+    width: 85%; 
+    margin: 10px auto;
+    ion-text {
+        font-size: 2em;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-page {
+    padding: 5rem;
+    text-align: center;
+}
+
+.start-page-header {
+    margin-top: 10%;
+    text-align: center;
+    ion-text {
+        font-size: 3rem;
+    }
+    margin-bottom: 20%;
+}
+
+.enter-username {
+    margin-left: 2%;
+    font-size: 1.5rem;
+}
+
+.flags-footer {
+    position: fixed;
+    bottom: 2%;
+}
+
+.flags-header {
+    margin-top: 10%;
+}
+
+ion-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
