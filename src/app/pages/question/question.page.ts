@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Choice } from '../../model/choice';
-import { QuestionsService } from 'src/app/services/questions.service';
 import { Question } from 'src/app/model/question';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { QuestionsService } from 'src/app/services/questions/questions.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 
 @Component({
@@ -26,10 +26,10 @@ export class QuestionPage implements OnInit {
   ngOnInit() {
     this.questionsService.currentQuestion.subscribe((number) => {
       this.questionNumber = number;
-      if(this.userService.user.getValue().username==="") {
+      if(!this.userService.user.getValue().username) {
         this.router.navigateByUrl('start');
       }
-      if(this.questionsService.questions.length<=this.questionNumber) {
+      else if(this.questionsService.questions.length<=this.questionNumber) {
         this.router.navigateByUrl('end');
       }
       this.question = this.questionsService.questions[this.questionNumber];

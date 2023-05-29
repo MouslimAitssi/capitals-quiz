@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/user';
-import { QuestionsService } from 'src/app/services/questions.service';
-import { UserService } from 'src/app/services/user.service';
-
+import { QuestionsService } from 'src/app/services/questions/questions.service';
+import { UserService } from 'src/app/services/user/user.service';
 @Component({
   selector: 'app-start',
   templateUrl: './start.page.html',
@@ -23,10 +22,6 @@ export class StartPage implements OnInit {
   play() {
     this.userService.user.next(new User(this.username, 0));
     this.router.navigateByUrl('question');
-  }
-
-  getRanking() {
-    this.router.navigateByUrl('ranking');
   }
 
   ionViewWillEnter() {

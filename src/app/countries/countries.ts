@@ -542,11 +542,6 @@ export const countries: country[] = [
         "icon": "im"
     },
     {
-        "name": "Israel",
-        "capital": "Jerusalem",
-        "icon": "il"
-    },
-    {
         "name": "Italy",
         "capital": "Rome",
         "icon": "it"
@@ -1062,8 +1057,8 @@ export const countries: country[] = [
         "icon": "lk"
     },
     {
-        "name": "State of Palestine",
-        "capital": "Ramallah",
+        "name": "Palestine",
+        "capital": "Jerusalem",
         "icon": "ps"
     },
     {
@@ -1240,11 +1235,6 @@ export const countries: country[] = [
         "name": "Wallis and Futuna",
         "capital": "Mata-Utu",
         "icon": "wf"
-    },
-    {
-        "name": "Western Sahara",
-        "capital": "Laayoune",
-        "icon": "eh"
     },
     {
         "name": "Yemen",

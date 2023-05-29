@@ -2,8 +2,11 @@
     height: 30%; 
     width: 93%; 
     margin: 50px auto;
+    ion-text.small-text {
+      font-size: 1.5rem; // Small font size
+    }
     ion-text {
-        font-size: 2.5em;
+      font-size: 2rem; // Default font size
     }
     color: rgba(0, 0, 0, 0.712);
     display: flex;

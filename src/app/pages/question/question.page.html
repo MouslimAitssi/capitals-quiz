@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true" color="primary">
   <ion-card class="question" color="medium">
     <img src={{question.imgUrl}} alt="country" width="60%" height="50%"/><br/>
-    <ion-text>{{question.text}}</ion-text>
+    <ion-text [ngClass]="{'small-text': question.text.length >= 40}">{{question.text}}</ion-text>
   </ion-card>
   <ion-card *ngFor="let choice of question.choices" class="choice" (click)="selectAnswer(choice)" class={{getClass(choice)}} color="secondary">
     <ion-text>{{choice.body}}</ion-text>

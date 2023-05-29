@@ -5,6 +5,7 @@
 
 ion-card {
     margin: 5% auto;
+    padding: 0 2%;
     display: flex;
     align-items: center;
 }
@@ -21,4 +22,8 @@ ion-card {
 
 .no-user {
     margin: auto;
+}
+
+.spacer {
+    flex: 1 1 auto;
 }

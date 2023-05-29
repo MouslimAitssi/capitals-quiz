@@ -17,6 +17,8 @@
       <h1><strong>{{user.username}}</strong></h1>
       <h5>({{user.totalPoints}} points)</h5>
     </div>
+    <span class="spacer"></span>
+    <ion-fab-button color="danger" (click)="deleteUserRanking(user)"><ion-icon name="trash"></ion-icon></ion-fab-button>
   </ion-card>
   <h1 class="no-user" *ngIf="users.length === 0">No one has played on your device yet.</h1>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
-import { RankingService } from 'src/app/services/ranking.service';
+import { RankingService } from 'src/app/services/ranking/ranking.service';
 
 @Component({
   selector: 'app-ranking',
@@ -16,6 +16,15 @@ export class RankingPage implements OnInit {
   }
 
   ionViewWillEnter() {
+    this.refreshUsers();
+  }
+
+  deleteUserRanking(user : User) {
+    this.rankingService.deleteUserRanking(user);
+    this.refreshUsers();
+  }
+
+  refreshUsers() {
     this.users = this.rankingService.users;
   }
 
