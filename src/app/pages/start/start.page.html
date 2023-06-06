@@ -22,8 +22,8 @@
     <ion-text color="medium">Welcome to this </ion-text>
     <ion-text color="warning">Capitals Quiz !</ion-text>
   </div>
-  <ion-input placeholder="Enter a username" [(ngModel)]="username"></ion-input>
-  <ion-button (click)="play()" class="mode" color="medium" [disabled]="username===''">
+  <ion-input placeholder="Enter a username" [(ngModel)]="username" (keyup.enter)="play()"></ion-input>
+  <ion-button (click)="play()" class="mode" color="medium" [disabled]="!username">
     <ion-text>Try the quiz <ion-icon name="earth" size="large"></ion-icon></ion-text> 
   </ion-button>
 

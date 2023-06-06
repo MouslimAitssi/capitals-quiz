@@ -13,7 +13,7 @@
     <ion-text [ngClass]="{'small-text': question.text.length >= 40}">{{question.text}}</ion-text>
   </ion-card>
   <ion-card *ngFor="let choice of question.choices" class="choice" (click)="selectAnswer(choice)" class={{getClass(choice)}} color="secondary">
-    <ion-text>{{choice.body}}</ion-text>
+    <ion-text [ngClass]="{'small-text': question.text.length >= 20}">{{choice.body}}</ion-text>
   </ion-card>
   <ion-button *ngIf="anAnswerIsSelected" (click)="nextQuestion()" color="warning" class="next-btn">Next <ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
 </ion-content>

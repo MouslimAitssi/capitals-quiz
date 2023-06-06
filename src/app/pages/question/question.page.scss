@@ -23,6 +23,9 @@
     height: 8%; 
     width: 85%; 
     margin: 10px auto;
+    ion-text.small-text {
+        font-size: 1.5rem; // Small font size
+    }
     ion-text {
         font-size: 2em;
     }
@@ -37,12 +40,12 @@
 }
 
 .falsy {
-    background: rgb(247, 17, 17);
+    background: rgba(75, 68, 68, 0.89);
     color:white;
 }
 
 .falsy-clicked {
-    background: rgb(247, 17, 105);
+    background: rgb(247, 17, 17);
     color:white;
 }
 

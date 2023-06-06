@@ -22,8 +22,10 @@ export class StartPage implements OnInit {
   ngOnInit() {}
 
   play() {
-    this.userService.user.next(new User(this.username, 0));
-    this.router.navigateByUrl('question');
+    if(this.username) {
+      this.userService.user.next(new User(this.username, 0));
+      this.router.navigateByUrl('question');
+    }
   }
 
   ionViewWillEnter() {

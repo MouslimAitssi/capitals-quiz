@@ -42,4 +42,7 @@ ion-button {
     display: flex;
     align-items: center;
     justify-content: center;
+    ion-text {
+        font-size: 1.5rem;
+    }
 }
